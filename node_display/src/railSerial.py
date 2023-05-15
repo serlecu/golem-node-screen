@@ -11,7 +11,7 @@ import src.globals as g
 def findSerial():
     ports = serial.tools.list_ports.comports()
     for port in ports:
-        print(port)
+        print(port.device)
     time.sleep(100)
     
 
