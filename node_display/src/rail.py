@@ -82,10 +82,10 @@ def railControl():
     while not g.killRail:
         if g.i2cConnected:
             try:
-                if (g.syncState): #! Warning -> endSwitches
-                    moveToOrigin()
-                    syncState = False
-                    continue
+                # if (g.syncState): #! Warning -> endSwitches
+                #     moveToOrigin()
+                #     syncState = False
+                #     continue
                 # Handle EndSwitches -> direction
                 handleEndSwitch()
                 # Perform Step

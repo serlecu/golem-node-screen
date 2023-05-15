@@ -14,7 +14,7 @@ lastLoopTime: float
 deviceInfo: str
 isScanning: bool
 scannCrono: float = 3.0
-scannFrequency: float = 10.0
+scannFrequency: float = 5.0
 killBleak: bool = False
 foundDevicesBleak: list#[BLEDevice]
 # ~ matchedClients: list#[BleakClient]
@@ -35,6 +35,9 @@ railSpeed: int = 60
 railDelay: float = 1.0
 endSwitchCounter = 0
 syncState = False
+
+# OneWire (pseudo)
+killOneWire: bool = False
 
 
 # Pygame
