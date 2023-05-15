@@ -16,7 +16,7 @@ def oneWireThread():
 
     while not g.killOneWire:
         GPIO.output(26, GPIO.HIGH)
-        time.sleep(g.railDelay*2000) # railDelay is [0./1.]
+        time.sleep(g.railDelay*4000) # railDelay is [0./1.]
         GPIO.output(26, GPIO.LOW)
 
         print(f"ONE WIRE: {g.railDelay*2}")
