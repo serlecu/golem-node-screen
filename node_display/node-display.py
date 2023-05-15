@@ -97,7 +97,7 @@ def Update():
       # ~ g.connectingCrono = round(random.uniform(g.connectFreq, g.connectFreq+5.0), 2)
     
     # Handle Bluetooth notifications
-    handleBTData()
+    # handleBTData()
 
     # Draw graphics on the screen
     DrawLoop()

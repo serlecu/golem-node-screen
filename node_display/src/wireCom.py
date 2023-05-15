@@ -12,16 +12,15 @@ def initOneWire():
 
 def oneWireThread():
     wireTimer:float = 0
-    wireTimerMax:float = 0.2
+    wireTimerMax:float = 1
 
     while not g.killOneWire:
-        if wireTimer <= 0:
-            writeOneWire(g.railDelay*2)
-            print(f"ONE WIRE: {g.railDelay*2}")
-            wireTimer = wireTimerMax
-        else:
-            wireTimer -= (time.time() - g.lastLoopTime)
-        g.lastLoopTime = time.time()
+        GPIO.output(26, GPIO.HIGH)
+        time.sleep(g.railDelay*2000) # railDelay is [0./1.]
+        GPIO.output(26, GPIO.LOW)
+
+        print(f"ONE WIRE: {g.railDelay*2}")
+        time.sleep(1000)
         
 
 
