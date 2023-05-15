@@ -18,7 +18,8 @@ def Setup():
   g.initGlobals()
   
   # Init Rail - Serial
-  findSerial()
+  railSerial_thread = threading.Thread(target=railSerialThread, daemon=True)
+  railSerial_thread.start()
 
   # Init Rail - I2C
   # try:
