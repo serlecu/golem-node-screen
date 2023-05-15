@@ -8,7 +8,7 @@ from src.bluetooth import *
 from src.graphics import *
 from src.debug_display import *
 from src.rail import *
-from src.wireCom import *
+from src.railSerial import *
 
 # import simplepyble as ble
 
@@ -17,6 +17,9 @@ def Setup():
 
   g.initGlobals()
   
+  # Init Rail - Serial
+  findSerial()
+
   # Init Rail - I2C
   # try:
   #   initRail()
@@ -28,10 +31,6 @@ def Setup():
   # rail_thread = threading.Thread(target=railControl, daemon=True)
   # rail_thread.start()
 
-  # Init Wire - GPIO
-  initOneWire()
-  wire_thread = threading.Thread(target=oneWireThread, daemon=True)
-  wire_thread.start()
   
 
   # Initialize Pygame

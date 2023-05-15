@@ -1,9 +1,33 @@
 import RPi.GPIO as GPIO
 import time
+import serial
+import serial.tools.list_ports
 
 import src.globals as g
 
 
+# ========= RAIL SERIAL =========
+
+def findSerial():
+    ports = serial.tools.list_ports.comports()
+    for port in ports:
+        print(port)
+    time.sleep(100)
+    
+
+def openSerial(s, port:str):
+    arduino = serial.Serial(port, 9600)
+    
+    
+
+
+def sendValueSerial(value: int):
+    
+    arduino.write(b'9')
+
+
+
+# ========= ONE WIRE =========
 def initOneWire():
     # Setup Pin
     GPIO.setmode(GPIO.BCM)
