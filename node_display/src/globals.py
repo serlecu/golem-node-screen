@@ -38,6 +38,7 @@ syncState = False
 
 # OneWire (pseudo)
 killOneWire: bool = False
+killRailSerial: bool = False
 
 
 # Pygame
