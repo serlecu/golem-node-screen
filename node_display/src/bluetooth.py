@@ -2,8 +2,8 @@ import time
 import threading
 import asyncio
 
-import bluetooth as bt
-import simplepyble as ble
+# import bluetooth as bt
+# import simplepyble as ble
 
 import bless
 from bless import (
@@ -155,7 +155,7 @@ async def updateScanResoults(scanner):
             
         await asyncio.sleep(2)
         print("BLEAK: end scanning")
-        g.scannCrono = g.scannFrequency
+        # g.scannCrono = g.scannFrequency
         g.isScanning = False
         
             

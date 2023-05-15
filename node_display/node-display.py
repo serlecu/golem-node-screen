@@ -9,7 +9,7 @@ from src.graphics import *
 from src.debug_display import *
 from src.rail import *
 
-import simplepyble as ble
+# import simplepyble as ble
 
 def Setup():
   import src.globals as g
@@ -102,8 +102,8 @@ def Update():
 
 
     # Update Timers
-    if(g.isScanning == False):
-      g.scannCrono -= (time.time() - g.lastLoopTime)
+    # if(g.isScanning == False):
+    #   g.scannCrono -= (time.time() - g.lastLoopTime)
     # ~ if (g.isConnecting == False):
       # ~ g.connectCrono -= (time.time() - g.lastLoopTime)
 
