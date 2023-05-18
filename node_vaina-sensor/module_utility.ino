@@ -61,3 +61,21 @@ void errorSequence(int loop = 2) {
 void blink(){
     led1 = !led1;
 }
+
+void dimmerRGB(){
+    if (ledIncrease) {
+      ledDimmVal ++;
+    } else {
+      ledDimmVal --;
+    }
+
+    if (ledDimmVal < minDimmVal) {
+      ledIncrease = true;
+    } else if (ledVal > maxDimmVal){
+      ledIncrease = false;
+    }
+
+    analogWrite(LEDR, ledDimmVal);
+    analogWrite(LEDG, ledDimmVal);
+    analogWrite(LEDB, ledDimmVal);
+}

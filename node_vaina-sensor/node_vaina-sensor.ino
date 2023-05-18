@@ -29,6 +29,7 @@ void inLedGreen(bool);
 void inLedBlue(bool);
 void readySequence(int);
 void errorSequence(int);
+void dimmerRGB(int, int);
 // Setup
 void setupRGBLED();
 void setupOLED(void);
@@ -52,8 +53,14 @@ bool isConnected = false; //miss
 bool waitBleLed = false; //Blue Blink while waiting for connection
 unsigned long disconnectedTimer;
 unsigned long mainTimer;
-Ticker tickerBlink; 
+Ticker tickerBlink;
 DigitalOut led1(LED1); // test against freeze
+Ticker tickerDimmerLed;
+bool ledIncrease = false;
+int ledDimmVal = 255;
+int minDimmVal = 128;
+int maxDimmVal = 255;
+
 
 // -- Sensors -- //
 bool sensorsUpdated = false;
@@ -161,6 +168,7 @@ int displayErrorOLED = 0;
 void setup() {
   setupRGBLED();
   tickerBlink.attach(&blink, 1);
+  tickerDimmerLed.attacj(&dimmerRGB, 0.01);
 
   // --- OLED ---
   inLedGreen(HIGH);
