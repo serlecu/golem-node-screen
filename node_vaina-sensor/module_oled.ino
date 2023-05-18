@@ -1,7 +1,7 @@
 void setupOLED() {
-  // Clear the display
-  display.clearDisplay();
-  display.display();
+  // Clear the display on startup
+  // display.clearDisplay();
+  // display.display();
 }
 
 void handleOLED() {
