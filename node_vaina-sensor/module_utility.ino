@@ -10,6 +10,17 @@ void setupRGBLED() {
 }
 
 // UTILITY FUNCTIONS ===============================
+void inLedWhite(bool state) {
+  if(state){
+    digitalWrite(LEDR, state);
+    digitalWrite(LEDG, state);
+    digitalWrite(LEDB, state);
+  } else {
+    digitalWrite(LEDR, !state);
+    digitalWrite(LEDG, !state);
+    digitalWrite(LEDB, !state);
+  }
+}
 
 void inLedRed(bool state) {
   if(state){
@@ -71,7 +82,7 @@ void dimmerRGB(){
 
     if (ledDimmVal < minDimmVal) {
       ledIncrease = true;
-    } else if (ledVal > maxDimmVal){
+    } else if (ledDimmVal > maxDimmVal){
       ledIncrease = false;
     }
 

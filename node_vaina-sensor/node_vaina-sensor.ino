@@ -29,7 +29,7 @@ void inLedGreen(bool);
 void inLedBlue(bool);
 void readySequence(int);
 void errorSequence(int);
-void dimmerRGB(int, int);
+void dimmerRGB(void);
 // Setup
 void setupRGBLED();
 void setupOLED(void);
@@ -168,7 +168,7 @@ int displayErrorOLED = 0;
 void setup() {
   setupRGBLED();
   tickerBlink.attach(&blink, 1);
-  tickerDimmerLed.attacj(&dimmerRGB, 0.01);
+  // tickerDimmerLed.attach(&dimmerRGB, 1.0 / 100.0);
 
   // --- OLED ---
   inLedGreen(HIGH);
@@ -225,7 +225,10 @@ void setup() {
   delay(1500);
 
   // All OK  
-  readySequence(4);
+  readySequence(2);
+
+  inLedWhite(HIGH);
+
 }
 
 
